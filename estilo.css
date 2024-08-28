@@ -1,0 +1,173 @@
+*{ /* Resetou o CSS para que os padrões normais não afetassem mais o código: MARGIN, PADDING, BOX-SIZING! */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root { /* html ou root tem a mesma função, porém os programadores acabam usando ROOT como o padrão! */
+    --text-color: white;
+    --bg-url: url(./assests/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255,0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+--surface-color-hover: rgba(255, 255, 255,0.5);
+--higlight-color: rgba(255, 255, 255, 0.2);
+--switch-bg-url: url(./assests/moon-stars.svg);
+}
+
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assests/bg-mobile-light.jpg)
+    --stroke-color: rgba(0,0,0, 0.5)
+    --surface-color: rgba(0, 0, 0, 0.5 )
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --higlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assests/sun.svg);
+}
+
+
+
+body {
+    background: var(--bg-url) no-repeat top center/cover; /* Colocou a imagem de fundo no front-end!*/
+    
+}
+body * {  /* BODY (*) Colocou o tipo de fonte (font-family) ultizada no texto e a cor (color)! */
+        font-family: "Inter Tight", sans-serif;
+        color: var(--text-color);
+      }
+      
+#container {
+    width: 360px;
+    margin: 56px auto 0px auto ; /* Margin funciona como um relógio, 56px= top, Auto= right, 0px= Boton, auto= left! */
+    padding: 0 24px; /* Foi observado no spactor do site, e foi visto que precisava fazer uma alteração nas dimesões do site! */
+}
+
+/* Profile */
+#profile { 
+    text-align: center; /*  text-align centralizou o texto*/
+}
+#profile img { /* É referente a imagem que foi colocada no html, porém nesse caso foi colocado width 112px */
+    /*display: (block) poderia ser utilizada block ou o (text-align: center)*/
+    width: 112px;
+    /*margin: (auto) para ser utilizado necessariamente, precisaria do display (block) ativo!*/
+}
+#profile p {
+    font-weight: 500px;
+    line-height: 24px;
+}
+
+/* switch */
+#switch{
+
+    position: relative;
+    width: 64px ;
+    margin: 4px auto;
+}
+
+
+#switch button { 
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute; /*  Position: absolute é uma forma de alinhar objetos */
+    left: 0;
+    top: 50%;
+    z-index: 1; /* Z-index ele é como se fosse um degrau, cada numero alterado pode subir um degral ou descer um degral! */
+    transform: translateY(-50%); /* transform: transltey é como ele alinha o objeto no eixo vertical, no caso, no eixo y */
+
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+
+}
+
+/* links */
+ul {
+list-style: none; /* List-style (none) tira os numeros que a coluna coloca altomaticamente, como poderia colocar numeros tambem, nessa caso seria ( number) */
+display: flex; /* Flex tem como propriedade criar linhas imaginarias no eixo X e Y */
+flex-direction: column; /* Deixa o texto em forma de coluna um embaixo do outro*/
+gap: 16px; /* O gab ele vai colocar um espaço entre as colunas, NÃO ENTRE A PRIMEIRA E A ULTIMA mais sim, entre as colunas do meio!*/
+padding: 24px 0; /* Esse padding é referente ao ( SOCIAL LINKS )! */
+
+}
+
+ul li a {
+/*border: 2px solid green;  Borda referente ao links do body */
+display: flex; /* Flex tem como propriedade criar linhas imaginarias no eixo X e Y */
+align-items: center;  /* Alinha o conteúdo na HORIZOTAL ( no centro )*/
+justify-content: center; /* Alinha o conteúdo na VERTICAL ( no centro ) */
+
+padding: 16px 24px;
+
+background: var(--surface-color); /* background - RGBA sinfigica -  R RED - G GREEN - B BLUE - A - ALFA TRANSPARENCIA */
+border: 1px solid var(--stroke-color); /* Border é a boarda que esta envolta do texto da pagina principal */
+border-radius: 8px; /* Border-radius ele vai dar o arredondamento das bordas das colunas, deixas mais agradável e mais suave! */
+
+backdrop-filter: blur(4px); /* backdrop-filter é o filtro que vai deixar os blocos da colunas mais embaçado (blur), nessa caso foi bem suave, foi apeans de 4px  */
+-webkit-backdrop-filter: blur(4px); /* Nesse caso foi preciso colocar um -webkit- antes para ser suportado no safari, isso pode ser buscado no site CAN I USE! */
+
+text-decoration: none; /* Esse text-decoration é para tirar as linhas que sublinham os textos, como pode colocar também! */
+-webkit-text-decoration: none; /* Esse -webkit- foi colocado por conta do safari 8+!*/
+font-weight: 500; /* Font-weight acima de 400 pode ser colocado como (BOLD) */
+
+transition: background 0.2; /* (TRANSITION) Tem a propriedade o tempo de resposta que a sombra vai fazer quando o mouse passar! */
+
+}
+
+/* pseudo-selector */
+ul li a:hover {
+
+    background: var(--surface-color-hover); /* (HOVER) tem como propriedade deixar sombra nos bloncos quando se passa o mouse! */
+    border: 1.5px solid var(--text-color);
+}
+
+/* Social links */
+#social-links {  /* Social-links é referente ao incones do, youtube, gethub, instagram... */
+    display: flex; /* Precise forças para display flex para manipular melhor os incones  */
+    gap: 32px;
+    justify-content: center; /* Só foi possivel usar justify-content porque foi colocado o display flex, caso não fosse seria necessaria colocar display block!  */
+    padding: 24px 0; /* Padding com as dimensões 24px e 0 é referente a distancia dos incones com os blocos */
+
+    font-size: 24px; /* Font-size é o tamanho dos incones das redes socias! */
+}
+
+#social-links a { /* Social links é responsável pelos links dos incones, nesse caso ele está pegando apenas o (A)! */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2; /* Transition é responsável pelo tempo de resposta quando o mouse passa, nesse caso de 0.2s */
+    border-radius: 50%; /* Border-radius é responsável por dar circunferencia ao incone das redes sociais quando passa o mouse! */
+    
+}
+
+#social-links a:hover { /* Esse social-links a:hover é responsável por dar acabamento no incone, no caso na cincurferencia e assim deixando mais suave e agrádavel! */
+    background: var(--higlight-color) ; /* Referente a cor de fundo da borda quando o mouse passa sobre o incone! */
+    
+    
+}
+
+footer{
+    
+   padding: 24px 0;
+   text-align: center;
+    
+}
+
