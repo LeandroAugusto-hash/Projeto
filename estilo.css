@@ -37,7 +37,8 @@ body * {  /* BODY (*) Colocou o tipo de fonte (font-family) ultizada no texto e 
       }
       
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px auto ; /* Margin funciona como um relógio, 56px= top, Auto= right, 0px= Boton, auto= left! */
     padding: 0 24px; /* Foi observado no spactor do site, e foi visto que precisava fazer uma alteração nas dimesões do site! */
 }
