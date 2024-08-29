@@ -29,6 +29,7 @@
 
 body {
     background: var(--bg-url) no-repeat top center/cover; /* Colocou a imagem de fundo no front-end!*/
+    height: 100vh;
     
 }
 body * {  /* BODY (*) Colocou o tipo de fonte (font-family) ultizada no texto e a cor (color)! */
@@ -172,3 +173,13 @@ footer{
     
 }
 
+@media (min-width: 780px) {
+ :root {
+ --bg-url: url(./bg-desktop.jpg);
+ }
+ 
+ .light {
+
+    --bg-url: url(./bg-descktop-light.jpg);
+ }
+}
