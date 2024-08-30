@@ -17,9 +17,9 @@
 
 .light {
     --text-color: black;
-    --bg-url: url(./assests/bg-mobile-light.jpg)
-    --stroke-color: rgba(0,0,0, 0.5)
-    --surface-color: rgba(0, 0, 0, 0.5 )
+    --bg-url: url(./assests/bg-mobile-light.jpg);
+    --stroke-color: rgba(0,0,0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.5 );
     --surface-color-hover: rgba(0, 0, 0, 0.02);
     --higlight-color: rgba(0, 0, 0, 0.1);
     --switch-bg-url: url(./assests/sun.svg);
@@ -60,13 +60,10 @@ body * {  /* BODY (*) Colocou o tipo de fonte (font-family) ultizada no texto e 
 
 /* switch */
 #switch{
-
     position: relative;
     width: 64px ;
     margin: 4px auto;
 }
-
-
 #switch button { 
     width: 32px;
     height: 32px;
@@ -75,16 +72,15 @@ body * {  /* BODY (*) Colocou o tipo de fonte (font-family) ultizada no texto e 
     border-radius: 50%;
 
     position: absolute; /*  Position: absolute é uma forma de alinhar objetos */
+    top: 50%;   
     left: 0;
-    top: 50%;
     z-index: 1; /* Z-index ele é como se fosse um degrau, cada numero alterado pode subir um degral ou descer um degral! */
     transform: translateY(-50%); /* transform: transltey é como ele alinha o objeto no eixo vertical, no caso, no eixo y */
 
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-on 0.2s;
 }
 
 #switch span {
@@ -148,7 +144,6 @@ ul li a:hover {
 
     font-size: 24px; /* Font-size é o tamanho dos incones das redes socias! */
 }
-
 #social-links a { /* Social links é responsável pelos links dos incones, nesse caso ele está pegando apenas o (A)! */
     display: flex;
     align-items: center;
@@ -156,30 +151,47 @@ ul li a:hover {
     padding: 16px;
 
     transition: background 0.2; /* Transition é responsável pelo tempo de resposta quando o mouse passa, nesse caso de 0.2s */
-    border-radius: 50%; /* Border-radius é responsável por dar circunferencia ao incone das redes sociais quando passa o mouse! */
-    
+    border-radius: 50%; /* Border-radius é responsável por dar circunferencia ao incone das redes sociais quando passa o mouse! */ 
 }
-
 #social-links a:hover { /* Esse social-links a:hover é responsável por dar acabamento no incone, no caso na cincurferencia e assim deixando mais suave e agrádavel! */
     background: var(--higlight-color) ; /* Referente a cor de fundo da borda quando o mouse passa sobre o incone! */
-    
-    
 }
 
 footer{
-    
    padding: 24px 0;
    text-align: center;
-    
 }
+
+/*  MEDIA QUERIEZ */
 
 @media (min-width: 780px) {
  :root {
- --bg-url: url(./bg-desktop.jpg);
+ --bg-url: url(./assests/bg-mobile.jp);
  }
  
  .light {
 
-    --bg-url: url(./bg-descktop-light.jpg);
+    --bg-url: url(./assests/bg-mobile-light.jpg);
  }
+}
+
+/*  animation */
+
+@keyframes slide-on {
+    from {
+        left: 0;
+    }
+
+to {
+    left: 50%;
+}
+}
+
+@keyframes slide-off{
+    from {
+        left: 50%
+    }
+    to {
+        left: 0;
+    }
 }
