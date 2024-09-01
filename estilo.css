@@ -8,8 +8,8 @@
     --text-color: white;
     --bg-url: url(./assests/bg-mobile.jpg);
     --stroke-color: rgba(255, 255, 255,0.5);
-    --surface-color: rgba(255, 255, 255, 0.1);
-    --surface-color-hover: rgba(255, 255, 255,0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(255, 255, 255, 0.02);
     --higlight-color: rgba(255, 255, 255, 0.2);
     --switch-bg-url: url(./assests/moon-stars.svg);
 }
@@ -18,8 +18,8 @@
 .light {
     --text-color: black;
     --bg-url: url(./assests/bg-mobile-light.jpg);
-    --stroke-color: rgba(0,0,0, 0.5);
-    --surface-color: rgba(0, 0, 0, 0.5 );
+    --stroke-color: rgba(0, 0 , 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05 );
     --surface-color-hover: rgba(0, 0, 0, 0.02);
     --higlight-color: rgba(0, 0, 0, 0.1);
     --switch-bg-url: url(./assests/sun.svg);
@@ -61,7 +61,7 @@ body * {  /* BODY (*) Colocou o tipo de fonte (font-family) ultizada no texto e 
 /* switch */
 #switch{
     position: relative;
-    width: 64px ;
+    width: 64px;
     margin: 4px auto;
 }
 #switch button { 
@@ -80,7 +80,8 @@ body * {  /* BODY (*) Colocou o tipo de fonte (font-family) ultizada no texto e 
 }
 
 .light #switch button {
-    animation: slide-on 0.2s;
+    right: 0;
+    left: initial;
 }
 
 #switch span {
@@ -121,7 +122,7 @@ backdrop-filter: blur(4px); /* backdrop-filter é o filtro que vai deixar os blo
 -webkit-backdrop-filter: blur(4px); /* Nesse caso foi preciso colocar um -webkit- antes para ser suportado no safari, isso pode ser buscado no site CAN I USE! */
 
 text-decoration: none; /* Esse text-decoration é para tirar as linhas que sublinham os textos, como pode colocar também! */
--webkit-text-decoration: none; /* Esse -webkit- foi colocado por conta do safari 8+!*/
+/* -webkit-text-decoration: none;  Esse -webkit- foi colocado por conta do safari 8+!*/
 font-weight: 500; /* Font-weight acima de 400 pode ser colocado como (BOLD) */
 
 transition: background 0.2; /* (TRANSITION) Tem a propriedade o tempo de resposta que a sombra vai fazer quando o mouse passar! */
@@ -162,7 +163,9 @@ footer{
    text-align: center;
 }
 
-/*  MEDIA QUERIEZ */
+
+
+/*  MEDIA QUERIEZ 
 
 @media (min-width: 780px) {
  :root {
@@ -175,7 +178,7 @@ footer{
  }
 }
 
-/*  animation */
+
 
 @keyframes slide-on {
     from {
@@ -195,3 +198,4 @@ to {
         left: 0;
     }
 }
+*/
